@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 物品照片表
+ * 商品照片表
  *
  * @author cuijingzhi
  */

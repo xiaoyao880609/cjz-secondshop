@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>物品发布</title>
+<title>商品发布</title>
 <link rel="stylesheet"
 	href="<c:url value="/statics/bootstrap-4.3.1/css/bootstrap.css"/>">
 <link rel="stylesheet"
@@ -26,7 +26,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px;">
 				<div style="margin-top: 5px">
-					<B style="color: white; font-size: 20px;">物品详细信息</B>
+					<B style="color: white; font-size: 20px;">商品详细信息</B>
 				</div>
 			</div>
 			
@@ -37,7 +37,7 @@
 						id="register">
 						<spring:bind path="name">
 							<div class="form-group">
-								<form:label path="name" cssClass="control-label">物品标题</form:label>
+								<form:label path="name" cssClass="control-label">商品标题</form:label>
 								<form:input path="name" id="name" cssClass="form-control"/>
 								<output id="nameError" style="color: red"></output>
 							</div>
@@ -62,7 +62,7 @@
 						
 						<spring:bind path="prise">
 							<div class="form-group">
-								<form:label path="prise" cssClass="control-label">物品价格</form:label>
+								<form:label path="prise" cssClass="control-label">商品价格</form:label>
 								<form:input id="prise" path="prise" cssClass="form-control"
 									onblur="checkNum(this)"/>
 								<output id="priseError" style="color: red"></output>
@@ -71,7 +71,7 @@
 						
 						<spring:bind path="describe">
 							<div class="form-group">
-								<form:label path="describe" cssClass="control-label">物品描述</form:label>
+								<form:label path="describe" cssClass="control-label">商品描述</form:label>
 								<form:textarea path="describe" cssClass="form-control"
 									cssStyle="height: 160px"/>
 							</div>
@@ -81,12 +81,12 @@
 							<c:choose>
 								<c:when test="${good.id == 0}">
 									<button  class="btn"
-										style="background-color: #e5e5e5" onclick="return checkName()">获取物品ID</button>
+										style="background-color: #e5e5e5" onclick="return checkName()">获取商品ID</button>
 								</c:when>
 								
 								<c:otherwise>
 									<button disabled="disabled" type="submit" class="btn"
-										style="background-color: #e5e5e5">已获取物品ID${good.id}</button>
+										style="background-color: #e5e5e5">已获取商品ID${good.id}</button>
 								</c:otherwise>
 							</c:choose>
 						</div>
@@ -97,7 +97,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px; margin-top: 20px;">
 				<div style="margin-top: 5px">
-					<B style="color: white; font-size: 20px;">物品图片信息</B>
+					<B style="color: white; font-size: 20px;">商品图片信息</B>
 				</div>
 			</div>
 			
@@ -109,7 +109,7 @@
 						style="display: ${good.id == 0 ? '' : 'none'}">
 						<div class="col-md-12" align="center"
 							style="height: 100px; padding-top: 20px">
-							<h3 style="color: #dcdcdc">请先填写物品信息，获取物品ID</h3>
+							<h3 style="color: #dcdcdc">请先填写商品信息，获取商品ID</h3>
 						</div>
 					</div>
 					
@@ -193,7 +193,7 @@
 			style="background-color: #f9f9f9; padding-bottom: 15px;">
 			<div class="col-md-12 r"
 				style="text-align: center; margin-top: 10px; background-color: #00a0e9; padding: 5px">
-				<B style="font-size: 20px; color: white">最新发布的物品</B>
+				<B style="font-size: 20px; color: white">最新发布的商品</B>
 			</div>
 			
 			<div class="col-md-12"

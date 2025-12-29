@@ -174,7 +174,7 @@
 											<p></p>
 											<p style="color: #c4c4c4;">${review.uploadDate}</p>
 											<p>
-												<B style="color: #2aabd2">${review.fromUser}</B>&nbsp;评论了你的物品
+												<B style="color: #2aabd2">${review.fromUser}</B>&nbsp;评论了你的商品
 											</p>
 										</div>
 										
@@ -237,7 +237,7 @@
 				<div id="adv-bar" class="col-md-12"
 					style="margin-top: 5px; padding: 0px;">
 					<div class="col-md-12" align="center">
-						<B style="font-size: 20px; color: #c4c4c4">卖出的物品</B>
+						<B style="font-size: 20px; color: #c4c4c4">卖出的商品</B>
 					</div>
 					<div class="col-md-12"
 						style="overflow-y: auto; height: 450px; padding: 5px; background-color: #ffffff;">
@@ -246,7 +246,7 @@
 								<div class="col-md-12" align="center" style="margin-top: 150px">
 									<img src="<c:url value="/statics/image/logo/error.png"/>"
 										width="95%" ; height="170px;">
-									<p style="color: #c4c4c4; font-size: 16px">抱歉，暂未卖出物品！</p>
+									<p style="color: #c4c4c4; font-size: 16px">抱歉，暂未卖出商品！</p>
 								</div>
 							</c:when>
 							
@@ -259,7 +259,7 @@
 												<p></p>
 												<p style="color: #c4c4c4;">${sellGood.submitDate}</p>
 												<p>
-													<B style="color: #2aabd2">${sellGood.customer}</B>&nbsp;购买了你的物品&nbsp;<B
+													<B style="color: #2aabd2">${sellGood.customer}</B>&nbsp;购买了你的商品&nbsp;<B
 														style="color: #2aabd2">${sellGood.goodName}</B>
 												</p>
 											</div>

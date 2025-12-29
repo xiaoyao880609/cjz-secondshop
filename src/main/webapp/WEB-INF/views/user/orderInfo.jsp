@@ -45,7 +45,7 @@
 								<B>订单号</B>
 							</p>
 							<p style="color: #666666; height: 30px">
-								<B>物品名称</B>
+								<B>商品名称</B>
 							</p>
 							<p style="color: #666666; height: 30px">
 								<B>卖家</B>

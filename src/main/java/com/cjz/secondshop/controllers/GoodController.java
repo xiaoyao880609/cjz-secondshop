@@ -249,7 +249,7 @@ public class GoodController {
 		good.setUserId(user.getId());
 		good.setPhotoUrl("/images/goods/default/nophoto.png");
 		if (goodService.insertGood(good) != 1) {
-			System.out.println("插入物品失败！");
+			System.out.println("插入商品失败！");
 		}
 		model.addAttribute("goods", goods);
 		model.addAttribute("good", good);
@@ -355,8 +355,8 @@ public class GoodController {
 		List<Good> goods = goodService.getAllGoods(0, 5);
 		// 调用goodService的updateGood方法，传入商品对象，返回修改是否成功的整型值
 		if (!(goodService.updateGood(good) > 0)) {
-			// 如果修改失败，打印修改物品失败到控制台（调试用）
-			System.out.println("修改物品失败！");
+			// 如果修改失败，打印修改商品失败到控制台（调试用）
+			System.out.println("修改商品失败！");
 		}
 		// 通过商品id查询商品的图片列表
 		List<Image> goodImages = imageService.getImageByGoodId(good.getId());

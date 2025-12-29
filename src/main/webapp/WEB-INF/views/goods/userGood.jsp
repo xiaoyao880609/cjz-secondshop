@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${user.name}发布的物品</title>
+<title>${user.name}发布的商品</title>
 <link rel="stylesheet"
 	href="<c:url value="/statics/bootstrap-4.3.1/css/bootstrap.css"/>">
 <link rel="stylesheet"
@@ -87,7 +87,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px">
 				<div class="col-md-6" style="margin-top: 5px">
-					<B style="color: white; font-size: 20px">发布的物品</B>
+					<B style="color: white; font-size: 20px">发布的商品</B>
 				</div>
 			</div>
 			
@@ -97,7 +97,7 @@
 					<c:choose>
 						<c:when test="${userGoods.size() == 0}">
 							<div align="center">
-								<h4>抱歉，此用户未发布物品！</h4>
+								<h4>抱歉，此用户未发布商品！</h4>
 							</div>
 						</c:when>
 						
@@ -127,7 +127,7 @@
 			style="background-color: white; padding-bottom: 15px;">
 			<div class="col-md-12 r"
 				style="text-align: center; margin-top: 10px; background-color: #00a0e9; padding: 5px">
-				<B style="font-size: 20px; color: white">最新发布的物品</B>
+				<B style="font-size: 20px; color: white">最新发布的商品</B>
 			</div>
 			
 			<div class="col-md-12"

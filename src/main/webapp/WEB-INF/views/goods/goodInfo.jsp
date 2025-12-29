@@ -37,7 +37,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px">
 				<div class="col-md-8" style="margin-top: 5px">
-					<B style="color: white; font-size: 20px">物品信息</B>
+					<B style="color: white; font-size: 20px">商品信息</B>
 				</div>
 				
 				<div class="col-md-4"
@@ -96,7 +96,7 @@
 								<B>卖家</B>
 							</p>
 							<p style="color: #666666; height: 40px">
-								<B>物品类型</B>
+								<B>商品类型</B>
 							</p>
 							<p style="color: #666666; height: 40px">
 								<B>发布时间</B>
@@ -142,7 +142,7 @@
 						<div class="col-md-12" style="margin-top: 50px" align="right">
 							<p>
 								<a
-									href="<c:url value="/goods/userGoods?userId=${goodInfo.userId}"/>">查看卖家其他物品</a>
+									href="<c:url value="/goods/userGoods?userId=${goodInfo.userId}"/>">查看卖家其他商品</a>
 							</p>
 						</div>
 					</div>
@@ -152,7 +152,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px; margin-top: 20px;">
 				<div class="col-md-6" style="margin-top: 5px">
-					<B style="color: white; font-size: 20px">物品描述</B>
+					<B style="color: white; font-size: 20px">商品描述</B>
 				</div>
 			</div>
 			
@@ -381,7 +381,7 @@
 	<script>
     function buyButton() {
 		const dblChoseAlert = simpleAlert({
-			"content": "您即将购买该物品!",
+			"content": "您即将购买该商品!",
 			"buttons": {
 				"确定": function () {
 					dblChoseAlert.close();

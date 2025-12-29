@@ -9,7 +9,7 @@ import java.io.File;
  */
 public class FileCheck {
 	/**
-	 * 检查物品文件是否存在
+	 * 检查商品文件是否存在
 	 * 
 	 * @param filePath
 	 * @return

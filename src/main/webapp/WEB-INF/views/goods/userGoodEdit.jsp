@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>物品编辑</title>
+<title>商品编辑</title>
 <link rel="stylesheet"
 	href="<c:url value="/statics/bootstrap-4.3.1/css/bootstrap.css"/>">
 <link rel="stylesheet"
@@ -25,7 +25,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px;">
 				<div style="margin-top: 5px">
-					<B style="color: white; font-size: 20px;">修改物品信息</B>
+					<B style="color: white; font-size: 20px;">修改商品信息</B>
 				</div>
 			</div>
 			
@@ -48,7 +48,7 @@
 						
 						<spring:bind path="name">
 							<div class="form-group">
-								<form:label path="name" cssClass="control-label">物品标题</form:label>
+								<form:label path="name" cssClass="control-label">商品标题</form:label>
 								<form:input path="name" cssClass="form-control"></form:input>
 							</div>
 						</spring:bind>
@@ -72,7 +72,7 @@
 						
 						<spring:bind path="prise">
 							<div class="form-group">
-								<form:label path="prise" cssClass="control-label">物品价格</form:label>
+								<form:label path="prise" cssClass="control-label">商品价格</form:label>
 								<form:input id="prise" path="prise" cssClass="form-control"
 									onblur="checkNum(this)"></form:input>
 								<output id="priseError" style="color: red"></output>
@@ -81,7 +81,7 @@
 						
 						<spring:bind path="describe">
 							<div class="form-group">
-								<form:label path="describe" cssClass="control-label">物品描述</form:label>
+								<form:label path="describe" cssClass="control-label">商品描述</form:label>
 								<form:textarea path="describe" cssClass="form-control"
 									cssStyle="height: 160px"></form:textarea>
 							</div>
@@ -89,7 +89,7 @@
 						
 						<div class="form-group">
 							<a onclick="deleteGood()" class="btn"
-								style="background-color: #e5e5e5">删除物品</a>
+								style="background-color: #e5e5e5">删除商品</a>
 							<button type="submit" class="btn pull-right"
 								style="background-color: #e5e5e5">提交信息</button>
 						</div>
@@ -100,7 +100,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px; margin-top: 20px;">
 				<div style="margin-top: 5px">
-					<B style="color: white; font-size: 20px;">修改物品图片</B>
+					<B style="color: white; font-size: 20px;">修改商品图片</B>
 				</div>
 			</div>
 			
@@ -199,7 +199,7 @@
 			style="background-color: #f9f9f9; padding-bottom: 15px;">
 			<div class="col-md-12 r"
 				style="text-align: center; margin-top: 10px; background-color: #00a0e9; padding: 5px">
-				<B style="font-size: 20px; color: white">最新发布的物品</B>
+				<B style="font-size: 20px; color: white">最新发布的商品</B>
 			</div>
 			
 			<div class="col-md-12"
@@ -279,10 +279,10 @@
     function deleteGood() {
         $.get("/cjz/goods/userGoodEdit/delete/" + ${good.id}, function (data) {
             if (data == true){
-                alert("物品删除成功！");
+                alert("商品删除成功！");
                 $(window).attr('location','/cjz/user/userProfile');
             } else {
-                alert("物品删除失败！");
+                alert("商品删除失败！");
             }
         })
     }

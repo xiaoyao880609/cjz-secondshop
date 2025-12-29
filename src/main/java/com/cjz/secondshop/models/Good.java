@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 物品表
+ * 商品表
  * @author cuijingzhi
  */
 @Data

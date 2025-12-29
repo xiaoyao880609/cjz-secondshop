@@ -117,7 +117,7 @@
 					<div class="col-md-12">
 						<c:if test="${param.searchText != '' && param.searchText != null}">
 							<p></p>
-							<p>为您搜索到“${param.searchText}”相关物品${goodsNum}条记录</p>
+							<p>为您搜索到“${param.searchText}”相关商品${goodsNum}条记录</p>
 						</c:if>
 					</div>
 				</div>
@@ -165,7 +165,7 @@
 						<div align="center">
 							<img style="width: 500px; height: 350px;margin-right: 80px;"
 								src="<c:url value="/statics/image/photos/default/629cb7fd24892ec11d039d1d78e6c92b.jpeg"/>" alt="图片">
-							<h2>抱歉，该物品已售罄！</h2>
+							<h2>抱歉，该商品已售罄！</h2>
 						</div>
 					</c:when>
 				</c:choose>

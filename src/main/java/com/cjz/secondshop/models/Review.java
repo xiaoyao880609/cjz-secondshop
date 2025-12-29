@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Review {
 	private int id;
-	private int goodId; // 物品id
+	private int goodId; // 商品id
 	private String fromUser; //评论人
 	private int fromUserId; //评论人ID
 	private int toUserId; //被评论人ID

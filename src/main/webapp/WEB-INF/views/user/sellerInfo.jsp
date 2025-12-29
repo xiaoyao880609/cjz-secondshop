@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>卖出的物品订单信息</title>
+<title>卖出的商品订单信息</title>
 <link rel="stylesheet"
 	href="<c:url value="/statics/bootstrap-4.3.1/css/bootstrap.css"/>">
 <link rel="stylesheet"
@@ -24,7 +24,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px">
 				<div class="col-md-6" style="margin-top: 5px">
-					<B style="color: white; font-size: 20px">卖出的物品</B>
+					<B style="color: white; font-size: 20px">卖出的商品</B>
 				</div>
 			</div>
 			
@@ -44,7 +44,7 @@
 									<B>订单号</B>
 								</p>
 								<p style="color: #666666; height: 30px">
-									<B>物品名称</B>
+									<B>商品名称</B>
 								</p>
 								<p style="color: #666666; height: 30px">
 									<B>卖家</B>
@@ -143,7 +143,7 @@
 			style="background-color: #f9f9f9; padding-bottom: 15px;">
 			<div class="col-md-12 r"
 				style="text-align: center; margin-top: 10px; background-color: #e4e4e4; padding: 5px">
-				<B style="font-size: 20px; color: #a2a2a2">卖出的其他物品</B>
+				<B style="font-size: 20px; color: #a2a2a2">卖出的其他商品</B>
 			</div>
 			<div class="col-md-12 r"
 				style="background-color: #ffffff; margin-top: 15px; overflow-y: auto; height: 500px; padding: 5px">
@@ -153,7 +153,7 @@
 							style="background-color: #ffffff; margin-top: 50px;">
 							<img src="<c:url value="/statics/image/logo/error.png"/>"
 								width="95%"  height="170px;">
-							<p style="color: #c4c4c4; font-size: 16px">抱歉，暂无卖出的其他物品！</p>
+							<p style="color: #c4c4c4; font-size: 16px">抱歉，暂无卖出的其他商品！</p>
 						</div>
 					</c:when>
 					

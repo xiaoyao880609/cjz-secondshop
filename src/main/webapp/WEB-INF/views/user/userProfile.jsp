@@ -93,7 +93,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px">
 				<div class="col-md-6" style="margin-top: 5px">
-					<B style="color: white; font-size: 20px">我收藏的物品</B>
+					<B style="color: white; font-size: 20px">我收藏的商品</B>
 				</div>
 			</div>
 			
@@ -103,7 +103,7 @@
 					<p></p>
 					<p style="color: white; font-size: 20px; margin-bottom: 0px;"
 						align="center">
-						<B>我收藏的物品</B>
+						<B>我收藏的商品</B>
 					</p>
 					
 					<c:choose>
@@ -112,7 +112,7 @@
 								<p></p>
 								<img src="<c:url value="/statics/image/logo/error.png"/>"
 									width="40%" height="222px;">
-								<p style="color: #c4c4c4; font-size: 20px">你还没有收藏物品哦！</p>
+								<p style="color: #c4c4c4; font-size: 20px">你还没有收藏商品哦！</p>
 							</div>
 						</c:when>
 						
@@ -156,7 +156,7 @@
 			<div class="col-md-12 r1"
 				style="background-color: #00a0e9; height: 40px">
 				<div class="col-md-6" style="margin-top: 5px">
-					<B style="color: white; font-size: 20px">我的物品</B>
+					<B style="color: white; font-size: 20px">我的商品</B>
 				</div>
 			</div>
 			
@@ -166,7 +166,7 @@
 					<p></p>
 					<p style="color: #c4c4c4; font-size: 20px; margin-bottom: 0px;"
 						align="center">
-						<B>我发布的物品</B>
+						<B>我发布的商品</B>
 					</p>
 					
 					<c:choose>
@@ -175,7 +175,7 @@
 								<p></p>
 								<img src="<c:url value="/statics/image/logo/error.png"/>"
 									width="40%" ; height="222px;">
-								<p style="color: #c4c4c4; font-size: 20px">你还没有发布物品哦！</p>
+								<p style="color: #c4c4c4; font-size: 20px">你还没有发布商品哦！</p>
 							</div>
 						</c:when>
 						
@@ -247,7 +247,7 @@
 										<tr style="color: #666666">
 											<th style="width: 90px">订单编号</th>
 											<th style="width: 100px">卖家</th>
-											<th style="width: 140px">物品名称</th>
+											<th style="width: 140px">商品名称</th>
 											<th style="width: 70px">金额</th>
 											<th style="width: 200px">提交时间</th>
 											<th>订单状态</th>
@@ -327,7 +327,7 @@
 											<p></p>
 											<p style="color: #c4c4c4;">${review.uploadDate}</p>
 											<p>
-												<B style="color: #2aabd2">${review.fromUser}</B>&nbsp;评论了你的物品
+												<B style="color: #2aabd2">${review.fromUser}</B>&nbsp;评论了你的商品
 											</p>
 										</div>
 										
@@ -392,7 +392,7 @@
 				<div id="adv-bar" class="col-md-12"
 					style="margin-top: 5px; padding: 0px;">
 					<div class="col-md-12" align="center">
-						<B style="font-size: 16px; color: black">卖出的物品</B>
+						<B style="font-size: 16px; color: black">卖出的商品</B>
 					</div>
 					
 					<div class="col-md-12"
@@ -402,7 +402,7 @@
 								<div class="col-md-12" align="center" style="margin-top: 150px">
 									<img src="<c:url value="/statics/image/logo/error.png"/>"
 										width="95%" ; height="170px;">
-									<p style="color: black; font-size: 16px">抱歉，暂未卖出物品！</p>
+									<p style="color: black; font-size: 16px">抱歉，暂未卖出商品！</p>
 								</div>
 							</c:when>
 							
@@ -416,7 +416,7 @@
 												<p></p>
 												<p style="color: #c4c4c4;">${sellGood.submitDate}</p>
 												<p>
-													<B style="color: #2aabd2">${sellGood.customer}</B>&nbsp;购买了你的物品&nbsp;<B
+													<B style="color: #2aabd2">${sellGood.customer}</B>&nbsp;购买了你的商品&nbsp;<B
 														style="color: #2aabd2">${sellGood.goodName}</B>
 												</p>
 											</div>
