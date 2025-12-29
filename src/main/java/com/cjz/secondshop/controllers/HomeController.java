@@ -1,9 +1,8 @@
 package com.cjz.secondshop.controllers;
 
-import com.cjz.secondshop.models.User;
-import com.cjz.secondshop.services.UserService;
-import com.cjz.secondshop.utils.InfoCheck;
-import com.cjz.secondshop.utils.RandomString;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,12 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-import java.util.Map;
+import com.cjz.secondshop.models.User;
+import com.cjz.secondshop.services.UserService;
+import com.cjz.secondshop.utils.InfoCheck;
+import com.cjz.secondshop.utils.RandomString;
 
 @Controller
 public class HomeController {
@@ -72,16 +69,6 @@ public class HomeController {
                     // 如果有效，把用户对象存入会话中
                     session.setAttribute("user",user);
                     session.setMaxInactiveInterval(1800);
-//                    ServletContext application = session.getServletContext();
-//                    String sessionId = (String) application.getAttribute(user.getName()); //获取登录用户的 sessionId
-//                    if (sessionId!=null && !"".equals(sessionId)) {
-//                        message = "该账号已登录，请您更换账号进行登录！";
-//                        model.addAttribute("message", message);
-//                        //跳转到登陆页面
-//                        return "home/login";
-//                    } else {
-//                        application.setAttribute(user.getName(), session.getId());//设置登录用户的 sessionId
-//                    }
                     // 判断上一个页面的URL是否为空
                     if ("".equals(preURL)){
                         // 如果为空，重定向到首页
@@ -107,12 +94,8 @@ public class HomeController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(@RequestParam(required = false, defaultValue = "false" )String logout,
-//                         @RequestParam(value = "email", required = false) String email,
                          HttpSession session){
-//        User user = userService.getUserByEmail(email);
         session.removeAttribute("user");
-//        ServletContext application = session.getServletContext();
-//        application.removeAttribute(user.getName());    //系统退出，移除该用户的sessionId
         session.invalidate();
         return "redirect:/";
     }

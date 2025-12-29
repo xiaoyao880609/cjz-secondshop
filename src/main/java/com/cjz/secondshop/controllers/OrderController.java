@@ -103,8 +103,6 @@ public class OrderController {
 			HttpSession session) {
 		User sessionUser = (User) session.getAttribute("user");
 		Order orderInfo = orderService.getOrderById(orderId);
-		User user1 = userService.getUserById(orderInfo.getSellerId());
-		User user2 = userService.getUserById(orderInfo.getCustomerId());
 		if (sessionUser != null) {
 			// 从数据库中查询用户的最新信息
 			sessionUser = userService.getUserById(sessionUser.getId());
@@ -114,10 +112,6 @@ public class OrderController {
 		}else {
 			return "redirect:/";
 		}
-//		if (!user1.getAddress().equals(orderInfo.getSellerAddress()) && !user2.getAddress().equals(orderInfo.getCustomerAddress())){
-//			orderInfo.setSellerAddress(user1.getAddress());
-//			orderInfo.setCustomerAddress(user2.getAddress());
-//		}
 		List<Order> orders = orderService.getOtherOrderBySellerId(
 				sessionUser.getId(), orderId);
 		model.addAttribute("orderInfo", orderInfo);
@@ -126,6 +120,7 @@ public class OrderController {
 		return "user/sellerInfo";
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/user/order/delete/{orderId}", method = RequestMethod.GET)
 	public ResponseEntity deleteOrderById(@PathVariable Integer orderId) {
 		boolean success = false;
@@ -139,6 +134,7 @@ public class OrderController {
 		return ResponseEntity.ok(success);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/user/order/cancel/status/{orderId}&{statusId}&{goodId}", method = RequestMethod.GET)
 	public ResponseEntity cancelOrderById(@PathVariable Integer orderId,
 			 @PathVariable Integer statusId,@PathVariable Integer goodId) {
@@ -154,6 +150,7 @@ public class OrderController {
 		return ResponseEntity.ok(success);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/user/sellerOrder/delete/{orderId}&{goodId}", method = RequestMethod.GET)
 	public ResponseEntity deleteSellerOrderById(@PathVariable Integer orderId,
 			@PathVariable Integer goodId) {
@@ -165,6 +162,7 @@ public class OrderController {
 		return ResponseEntity.ok(success);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/user/order/update/status/{orderId}&{statusId}", method = RequestMethod.GET)
 	public ResponseEntity updateOrderStatus(@PathVariable Integer orderId,
 			@PathVariable Integer statusId) {
@@ -176,6 +174,7 @@ public class OrderController {
 		return ResponseEntity.ok(success);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/user/order/create", method = RequestMethod.POST)
 	public ResponseEntity createOrder(@RequestBody Order order) {
 		boolean success = orderService.insertOrder(order) > 0;
@@ -192,6 +191,7 @@ public class OrderController {
 		return ResponseEntity.ok(success);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/user/order/allOrder", method = RequestMethod.GET)
 	public ResponseEntity getAllOrders() {
 		List<Order> orderList = orderService.getOrderList();

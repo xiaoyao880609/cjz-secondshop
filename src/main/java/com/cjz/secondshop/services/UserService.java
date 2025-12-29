@@ -1,16 +1,13 @@
 package com.cjz.secondshop.services;
 
-import com.cjz.secondshop.mappers.UserMapper;
-import com.cjz.secondshop.models.User;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
-import java.util.List;
+import com.cjz.secondshop.mappers.UserMapper;
+import com.cjz.secondshop.models.User;
 
 @Service
 public class UserService {

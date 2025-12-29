@@ -1,9 +1,6 @@
 package com.cjz.secondshop.controllers;
 
-import com.cjz.secondshop.models.FirstType;
-import com.cjz.secondshop.models.SecondType;
-import com.cjz.secondshop.services.GoodService;
-import com.cjz.secondshop.services.TypeService;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.List;
+import com.cjz.secondshop.models.FirstType;
+import com.cjz.secondshop.models.SecondType;
+import com.cjz.secondshop.services.GoodService;
+import com.cjz.secondshop.services.TypeService;
 
 @Controller
 @RequestMapping("type")
@@ -27,6 +27,7 @@ public class TypeController {
 		this.goodService = goodService;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/secondType/{firstTypeId}", method = RequestMethod.GET)
 	public ResponseEntity getSecondTypeId(@PathVariable Integer firstTypeId) {
 		List<SecondType> secondTypes = typeService
@@ -37,6 +38,7 @@ public class TypeController {
 		return ResponseEntity.ok(secondTypes);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/secondType/delete/{secondTypeId}", method = RequestMethod.GET)
 	public ResponseEntity deleteSecondType(@PathVariable Integer secondTypeId) {
 		Boolean success = goodService.getGoodsAdminByType(secondTypeId)
@@ -58,6 +60,7 @@ public class TypeController {
 		return ResponseEntity.ok(success);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/firstType/delete/{firstTypeId}", method = RequestMethod.GET)
 	public ResponseEntity deleteFirstType(@PathVariable Integer firstTypeId) {
 		Boolean success = typeService.getSecondTypeByFirstTypeId(firstTypeId)
@@ -76,6 +79,7 @@ public class TypeController {
 	}
 
 	// 这是表示这个方法用于处理/secondType/create的POST请求
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/secondType/create", method = RequestMethod.POST)
 	// 这是一个方法，返回一个ResponseEntity对象，表示响应的数据和状态码
 	public ResponseEntity createSecondType(@RequestBody SecondType secondType) {
@@ -96,6 +100,7 @@ public class TypeController {
 	}
 
 	// 这是表示这个方法用于处理/firstType/create的POST请求
+	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/firstType/create", method = RequestMethod.POST)
 	// 这是一个方法，返回一个ResponseEntity对象，表示响应的数据和状态码
 	public ResponseEntity createSecondType(@RequestBody FirstType firstType) {
