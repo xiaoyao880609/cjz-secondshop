@@ -11,7 +11,7 @@
  Target Server Version : 80011 (8.0.11)
  File Encoding         : 65001
 
- Date: 29/12/2025 07:56:02
+ Date: 29/12/2025 14:26:37
 */
 
 SET NAMES utf8mb4;
@@ -22,12 +22,12 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `collect_table`;
 CREATE TABLE `collect_table`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `good_id` int(11) NULL DEFAULT NULL,
-  `good_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `user_id` int(11) NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '收藏ID',
+  `good_id` int(11) NULL DEFAULT NULL COMMENT '商品ID',
+  `good_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '商品名',
+  `user_id` int(11) NULL DEFAULT NULL COMMENT '用户ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '收藏表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of collect_table
@@ -39,10 +39,10 @@ INSERT INTO `collect_table` VALUES (2, 3, '毛绒玩具', 4);
 -- ----------------------------
 DROP TABLE IF EXISTS `first_type_table`;
 CREATE TABLE `first_type_table`  (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `id` int(11) NOT NULL COMMENT '第一分类ID',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '第一分类名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '第一分类表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of first_type_table
@@ -55,19 +55,19 @@ INSERT INTO `first_type_table` VALUES (2, '生活用品');
 -- ----------------------------
 DROP TABLE IF EXISTS `good_table`;
 CREATE TABLE `good_table`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `photo_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `first_type_id` int(11) NULL DEFAULT NULL,
-  `second_type_id` int(11) NULL DEFAULT NULL,
-  `describe` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `upload_date` datetime NULL DEFAULT NULL,
-  `prise` float NULL DEFAULT NULL,
-  `status_id` int(11) NULL DEFAULT NULL,
-  `user_id` int(11) NULL DEFAULT NULL,
-  `update` datetime NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品ID',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '商品名称',
+  `photo_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '图片URL',
+  `first_type_id` int(11) NULL DEFAULT NULL COMMENT '第一分类ID',
+  `second_type_id` int(11) NULL DEFAULT NULL COMMENT '第二分类ID',
+  `describe` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '商品描述',
+  `upload_date` datetime NULL DEFAULT NULL COMMENT '上传时间',
+  `prise` float NULL DEFAULT NULL COMMENT '商品价格',
+  `status_id` int(11) NULL DEFAULT NULL COMMENT '状态ID',
+  `user_id` int(11) NULL DEFAULT NULL COMMENT '用户ID',
+  `update` datetime NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '商品表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of good_table
@@ -90,12 +90,12 @@ INSERT INTO `good_table` VALUES (12, 'vivo手机', '/images/goods/3/12/12C5ca4Wx
 -- ----------------------------
 DROP TABLE IF EXISTS `image_table`;
 CREATE TABLE `image_table`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `good_id` int(11) NULL DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品图片ID',
+  `good_id` int(11) NULL DEFAULT NULL COMMENT '商品ID',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '图片名称',
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '图片地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 73 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 73 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '图片管理表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of image_table
@@ -127,23 +127,23 @@ INSERT INTO `image_table` VALUES (72, 12, '12VeevM5lz9v.jpeg', '/images/goods/3/
 -- ----------------------------
 DROP TABLE IF EXISTS `order_table`;
 CREATE TABLE `order_table`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `good_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `seller` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `seller_id` int(11) NULL DEFAULT NULL,
-  `seller_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `seller_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `customer_id` int(11) NULL DEFAULT NULL,
-  `customer_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `customer_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `good_id` int(11) NULL DEFAULT NULL,
-  `money` int(11) NULL DEFAULT NULL,
-  `submit_date` datetime NULL DEFAULT NULL,
-  `end_date` datetime NULL DEFAULT NULL,
-  `status_id` int(11) NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单ID',
+  `good_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '商品名称',
+  `seller` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '卖家',
+  `seller_id` int(11) NULL DEFAULT NULL COMMENT '卖家ID',
+  `seller_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '卖家手机',
+  `seller_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '卖家地址',
+  `customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '顾客',
+  `customer_id` int(11) NULL DEFAULT NULL COMMENT '顾客ID',
+  `customer_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '顾客手机',
+  `customer_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '顾客地址',
+  `good_id` int(11) NULL DEFAULT NULL COMMENT '商品ID',
+  `money` int(11) NULL DEFAULT NULL COMMENT '金额',
+  `submit_date` datetime NULL DEFAULT NULL COMMENT '提交时间',
+  `end_date` datetime NULL DEFAULT NULL COMMENT '结束时间',
+  `status_id` int(11) NULL DEFAULT NULL COMMENT '状态ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '订单表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_table
@@ -155,17 +155,17 @@ INSERT INTO `order_table` VALUES (1, 'iphone13', 'zhangsan', 3, '15100000001', '
 -- ----------------------------
 DROP TABLE IF EXISTS `reply_table`;
 CREATE TABLE `reply_table`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `review_id` int(11) NULL DEFAULT NULL,
-  `from_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `from_user_id` int(11) NULL DEFAULT NULL,
-  `to_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `to_user_id` int(11) NULL DEFAULT NULL,
-  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `upload_date` datetime NULL DEFAULT NULL,
-  `status` int(11) NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '回复ID',
+  `review_id` int(11) NULL DEFAULT NULL COMMENT '评论ID',
+  `from_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '回复人',
+  `from_user_id` int(11) NULL DEFAULT NULL COMMENT '回复人ID',
+  `to_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '被回复人',
+  `to_user_id` int(11) NULL DEFAULT NULL COMMENT '被回复人ID',
+  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '内容',
+  `upload_date` datetime NULL DEFAULT NULL COMMENT '回复时间',
+  `status` int(11) NULL DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '回复表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of reply_table
@@ -178,16 +178,16 @@ INSERT INTO `reply_table` VALUES (3, 2, 'zhaosi', 4, 'zhangsan', 4, '好吧...',
 -- ----------------------------
 DROP TABLE IF EXISTS `review_table`;
 CREATE TABLE `review_table`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `good_id` int(11) NULL DEFAULT NULL,
-  `from_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `from_user_id` int(11) NULL DEFAULT NULL,
-  `to_user_id` int(11) NULL DEFAULT NULL,
-  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `upload_date` datetime NULL DEFAULT NULL,
-  `status` int(11) NULL DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '评价ID',
+  `good_id` int(11) NULL DEFAULT NULL COMMENT '商品ID',
+  `from_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '评论人',
+  `from_user_id` int(11) NULL DEFAULT NULL COMMENT '评论人ID',
+  `to_user_id` int(11) NULL DEFAULT NULL COMMENT '被评论人ID',
+  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '内容',
+  `upload_date` datetime NULL DEFAULT NULL COMMENT '评论时间',
+  `status` int(11) NULL DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '评论表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of review_table
@@ -204,7 +204,7 @@ CREATE TABLE `second_type_table`  (
   `first_type_id` int(11) NULL DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2004 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2004 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '第二分类表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of second_type_table
@@ -236,7 +236,7 @@ CREATE TABLE `user_table`  (
   `register_date` datetime NULL DEFAULT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '用户表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_table

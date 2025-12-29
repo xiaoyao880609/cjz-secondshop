@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 商品照片表
+ * 商品管理表
  *
  * @author cuijingzhi
  */
@@ -20,7 +20,7 @@ public class Image {
 	 */
 	private int goodId;
 	/**
-	 * 名字
+	 * 图片名称
 	 */
 	private String name;
 	/**

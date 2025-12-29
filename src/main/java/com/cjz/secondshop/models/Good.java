@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Good {
 	private int id;
 	/**
-	 * 商品名字
+	 * 商品名称
 	 */
 	private String name;
 	/**

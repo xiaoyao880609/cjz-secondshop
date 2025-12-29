@@ -19,7 +19,7 @@ public class Reply {
 	private int fromUserId;// 回复人ID
 	private String toUser;// 被回复人
 	private int toUserId;// 被回复人ID
-	private String text;// 回复内容
+	private String text;// 内容
 	private String uploadDate; // 回复时间
 	private int status; // 状态
 
