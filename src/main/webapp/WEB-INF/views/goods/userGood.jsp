@@ -107,7 +107,7 @@
 									href="<c:url value="/goods/goodInfo?goodId=${userGood.id}"/>">
 									<div class="c col-md-4">
 										<div class="a col-md-12">
-											<img src="<c:url value="${userGood.photoUrl}"/>" width="100%" height="150px">
+											<img src="${userGood.photoUrl}" width="100%" height="150px">
 											<p></p>
 											<p style="height: 25px">${userGood.name}</p>
 											<p style="color: red; text-align: right">
